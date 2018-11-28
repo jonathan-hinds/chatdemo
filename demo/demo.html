@@ -13,12 +13,12 @@
 	    //create a new XML object to send the request.
 	    //mosSystem prrevents cross orgina requests error.
 	    var http = new XMLHttpRequest({mozSystem: true});
-		// http.onreadystatechange = function() {
-	 //    	if(http.readyState === 4 && http.status === 200) {
-  //   			//console.log(http.responseText);
-  //   			document.getElementById("body").innerHTML = http.responseText;
-  // 			}
-		// }
+		http.onreadystatechange = function() {
+	    	if(http.readyState === 4 && http.status === 200) {
+    			//console.log(http.responseText);
+    			document.getElementById("body").innerHTML = http.responseText;
+  			}
+		}
 	    //log the input so I can confirm this in the text file/
 	    //open a new post request to be sent to the host over port 3000
 	    http.open("GET", "https://zcw4-2nodedemo.herokuapp.com", true);
